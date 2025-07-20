@@ -5,9 +5,12 @@ import { cookies } from 'next/headers';
 
 export async function GET(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
+        // Await the params Promise
+        const { id } = await params;
+
         // Create a Supabase client with the cookies
         const cookieStore = cookies();
         const supabaseServer = createServerClient(
@@ -34,8 +37,6 @@ export async function GET(
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
-        const id = params.id;
-
         if (!id) {
             return NextResponse.json({ error: 'Booking ID is required' }, { status: 400 });
         }
@@ -44,12 +45,12 @@ export async function GET(
         const { data: booking, error: bookingError } = await supabase
             .from('bookings')
             .select(`
-        *,
-        slots:slot_id (
-          *,
-          turfs:turf_id (*)
-        )
-      `)
+                *,
+                slots:slot_id (
+                  *,
+                  turfs:turf_id (*)
+                )
+            `)
             .eq('id', id)
             .single();
 
