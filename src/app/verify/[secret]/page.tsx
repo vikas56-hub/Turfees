@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { formatDate, formatTime } from '@/utils/format';
 
-export default function VerifyPage({ params }: { params: { secret: string } }) {
-    const { secret } = params;
+export default function VerifyPage({ params }: { params: Promise<{ secret: string }> }) {
+    const { secret } = use(params);
     const [verification, setVerification] = useState<any>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);

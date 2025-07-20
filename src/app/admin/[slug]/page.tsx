@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,8 +9,8 @@ import { useAuth } from '@/components/AuthProvider';
 import AuthModal from '@/components/AuthModal';
 import AdminCalendar from '@/components/AdminCalendar';
 
-export default function AdminDashboardPage({ params }: { params: { slug: string } }) {
-    const { slug } = params;
+export default function AdminDashboardPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = use(params);
     const router = useRouter();
     const { user, isLoading: authLoading } = useAuth();
     const [activeTab, setActiveTab] = useState('bookings');

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,8 +8,8 @@ import { useAuth } from '@/components/AuthProvider';
 import AuthModal from '@/components/AuthModal';
 import { formatDate, formatTime } from '@/utils/format';
 
-export default function ReviewPage({ params }: { params: { bookingId: string } }) {
-    const { bookingId } = params;
+export default function ReviewPage({ params }: { params: Promise<{ bookingId: string }> }) {
+    const { bookingId } = use(params);
     const router = useRouter();
     const { user, isLoading: authLoading } = useAuth();
     const [booking, setBooking] = useState<any>(null);

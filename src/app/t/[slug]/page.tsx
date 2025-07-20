@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/Header';
@@ -8,8 +8,8 @@ import Footer from '@/components/Footer';
 import { formatPrice, formatDate, formatTime } from '@/utils/format';
 import { Turf, Slot } from '@/types';
 
-export default function TurfPage({ params }: { params: { slug: string } }) {
-    const { slug } = params;
+export default function TurfPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = use(params);
     const router = useRouter();
     const [turf, setTurf] = useState<Turf | null>(null);
     const [slots, setSlots] = useState<Slot[]>([]);
