@@ -1,0 +1,21 @@
+{
+    "name": "Turfees - Book Sports Turfs in Seconds",
+    "short_name": "Turfees",
+    "description": "Book and pay for turf slots in under 30 seconds. Find the perfect turf for your game.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#059669",
+    "icons": [
+        {
+            "src": "/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
