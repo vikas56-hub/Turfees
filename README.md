@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏟️ Turfees
 
-## Getting Started
+> **Book sports venues in under 30 seconds**
 
-First, run the development server:
+A zero-code booking platform that enables turf owners to replace their Google Maps "Website" button with a live booking page.
+
+## ✨ Features
+
+- 🚀 **Instant Booking** - No calls, no WhatsApp, just click and play
+- 📱 **Mobile First** - Optimized for on-the-go bookings
+- 🔐 **Smart Auth** - Phone OTP, Email magic links, or Google OAuth
+- 💳 **Secure Payments** - Stripe integration with UPI support
+- 📊 **Owner Dashboard** - Real-time booking management
+- 🎫 **QR Tickets** - Digital tickets with wallet integration
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 14, React, Tailwind CSS
+- **Backend:** Next.js API Routes (Serverless)
+- **Database:** Supabase (PostgreSQL)
+- **Auth:** Supabase Auth
+- **Payments:** Stripe
+- **Deployment:** Vercel
+
+## 🚀 Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/turfees-booking-platform.git
+
+# Install dependencies
+cd turfees-booking-platform
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to see the app in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📱 Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Try the live demo: [turfees.vercel.app](https://your-app.vercel.app)
 
-## Learn More
+**Demo Credentials:**
+- Player: `player@example.com` or `9876543210`
+- Owner: `owner@example.com` or `9876543211`
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Roadmap
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [x] Landing page and authentication
+- [x] Turf discovery and booking
+- [x] Owner onboarding flow
+- [ ] Payment integration
+- [ ] Real-time notifications
+- [ ] Review system
+- [ ] Mobile app
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 License
 
-## Deploy on Vercel
+MIT License - feel free to use this project for your own turf booking needs!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with ❤️ for the sports community

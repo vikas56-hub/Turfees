@@ -27,12 +27,12 @@ export async function POST(request: NextRequest) {
         );
 
         // Get the user from the session
-        const { data: { session } } = await supabaseServer.auth.getSession();
-        if (!session) {
+        const { data: { session: authSession } } = await supabaseServer.auth.getSession();
+        if (!authSession) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
-        const userId = session.user.id;
+        const userId = authSession.user.id;
         const body = await request.json();
         const { slotId } = body;
 
