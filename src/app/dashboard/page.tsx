@@ -100,8 +100,8 @@ export default function DashboardPage() {
                                 <button
                                     onClick={() => setActiveTab('bookings')}
                                     className={`py-4 px-6 text-center border-b-2 font-medium text-sm ${activeTab === 'bookings'
-                                            ? 'border-emerald-500 text-emerald-600'
-                                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                        ? 'border-emerald-500 text-emerald-600'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                         }`}
                                 >
                                     My Bookings
@@ -109,8 +109,8 @@ export default function DashboardPage() {
                                 <button
                                     onClick={() => setActiveTab('profile')}
                                     className={`py-4 px-6 text-center border-b-2 font-medium text-sm ${activeTab === 'profile'
-                                            ? 'border-emerald-500 text-emerald-600'
-                                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                        ? 'border-emerald-500 text-emerald-600'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                         }`}
                                 >
                                     Profile
@@ -119,8 +119,8 @@ export default function DashboardPage() {
                                     <button
                                         onClick={() => setActiveTab('turfs')}
                                         className={`py-4 px-6 text-center border-b-2 font-medium text-sm ${activeTab === 'turfs'
-                                                ? 'border-emerald-500 text-emerald-600'
-                                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                            ? 'border-emerald-500 text-emerald-600'
+                                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                             }`}
                                     >
                                         My Turfs
@@ -136,7 +136,7 @@ export default function DashboardPage() {
                                 <div>
                                     <h2 className="text-lg font-medium text-gray-900 mb-4">Your Bookings</h2>
                                     {bookings.length === 0 ? (
-                                        <p className="text-gray-500">You don't have any bookings yet.</p>
+                                        <p className="text-gray-500">You don&apos;t have any bookings yet.</p>
                                     ) : (
                                         <div className="space-y-4">
                                             {bookings.map((booking) => (
@@ -152,8 +152,8 @@ export default function DashboardPage() {
                                                             <span className="text-sm font-medium">₹{booking.price}</span>
                                                             <span
                                                                 className={`ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${booking.status === 'confirmed'
-                                                                        ? 'bg-green-100 text-green-800'
-                                                                        : 'bg-yellow-100 text-yellow-800'
+                                                                    ? 'bg-green-100 text-green-800'
+                                                                    : 'bg-yellow-100 text-yellow-800'
                                                                     }`}
                                                             >
                                                                 {booking.status === 'confirmed' ? 'Confirmed' : 'Pending'}

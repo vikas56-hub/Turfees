@@ -251,7 +251,7 @@ export default function OnboardPage() {
                         <div className="bg-white rounded-lg shadow-md p-6">
                             <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Your Turf</h2>
                             <p className="text-gray-600 mb-6">
-                                Search for your turf on Google Maps to quickly import details. If your turf isn't listed, you can add it manually in the next step.
+                                Search for your turf on Google Maps to quickly import details. If your turf isn&apos;t listed, you can add it manually in the next step.
                             </p>
 
                             <div className="flex mb-4">
