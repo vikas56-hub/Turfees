@@ -5,8 +5,9 @@ import { cookies } from 'next/headers';
 
 export async function GET(
     request: NextRequest,
-    { params }: { params: { slug: string } }
+    { params }: { params: Promise<{ slug: string }> }
 ) {
+    const { slug } = await params;
     try {
         // Create a Supabase client with the cookies
         const cookieStore = cookies();
@@ -109,8 +110,9 @@ export async function GET(
 
 export async function PATCH(
     request: NextRequest,
-    { params }: { params: { slug: string } }
+    { params }: { params: Promise<{ slug: string }> }
 ) {
+    const { slug } = await params;
     try {
         // Create a Supabase client with the cookies
         const cookieStore = cookies();

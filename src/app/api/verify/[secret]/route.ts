@@ -3,10 +3,10 @@ import { supabase } from '@/lib/supabase/client';
 
 export async function GET(
     request: NextRequest,
-    { params }: { params: { secret: string } }
+    { params }: { params: Promise<{ secret: string }> }
 ) {
+    const { secret } = await params;
     try {
-        const secret = params.secret;
 
         if (!secret) {
             return NextResponse.json({ error: 'QR secret is required' }, { status: 400 });
