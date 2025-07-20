@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { formatPrice, formatDate, formatTime } from '@/utils/format';
@@ -98,12 +99,12 @@ export default function TurfPage({ params }: { params: { slug: string } }) {
                     <div className="text-center">
                         <h1 className="text-2xl font-bold text-slate-900">Turf Not Found</h1>
                         <p className="mt-2 text-slate-500">{error || 'The requested turf could not be found.'}</p>
-                        <a
+                        <Link
                             href="/"
                             className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700"
                         >
                             Go Home
-                        </a>
+                        </Link>
                     </div>
                 </main>
                 <Footer />
@@ -220,10 +221,10 @@ export default function TurfPage({ params }: { params: { slug: string } }) {
                                                     key={slot.id}
                                                     type="button"
                                                     className={`px-4 py-2 text-sm font-medium rounded-md ${slot.status === 'available'
-                                                            ? selectedSlot?.id === slot.id
-                                                                ? 'bg-emerald-600 text-white'
-                                                                : 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
-                                                            : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                                                        ? selectedSlot?.id === slot.id
+                                                            ? 'bg-emerald-600 text-white'
+                                                            : 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
+                                                        : 'bg-slate-100 text-slate-400 cursor-not-allowed'
                                                         }`}
                                                     disabled={slot.status !== 'available'}
                                                     onClick={() => setSelectedSlot(slot)}
